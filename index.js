@@ -23,5 +23,15 @@ try {
     const nameOfJavi = midfielders[Math.floor(Math.random() * midfielders.length)];
     document.getElementById('name').textContent = nameOfJavi;
 } catch(e) {
-    alert('Failed to get list of barcelona midfielders');
+    const el = document.getElementById('name');
+    const style = {
+        background: 'white',
+        color: 'red',
+        border: '3px solid green',
+        padding: '0 5px',
+    };
+    el.textContent = "Failed to get name for Javi, quite possibly wikipedia changed their html"
+    Object.entries(style).forEach(([k, v]) => {
+        el.style[k] = v;
+    });
 }
